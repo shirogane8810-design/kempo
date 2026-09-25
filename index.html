@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>みっちゃん塾 日本拳法教室｜神戸市灘区・小学2〜4年生</title>
+<meta name="description" content="くやしさを、強さに変える。神戸市灘区・六甲道周辺の小学2〜4年生向け日本拳法教室。毎週水曜19時〜20時、月謝5,500円。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#d92332; --red-dk:#a8141f; --orange:#ff6b35;
+  --ink:#1a1a1a; --gray:#5b5b5b; --line:#e6e0dc;
+  --bg:#ffffff; --bg2:#fbf6f2; --tbd:#fff4c2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--bg);line-height:1.8;font-size:16px;padding-bottom:84px}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+
+/* 未確定の印（公開前に消す） */
+.tbd{background:var(--tbd);border-radius:4px;padding:0 4px;font-size:.78em;font-weight:700;color:#8a6a00;margin-left:4px;white-space:nowrap}
+
+/* header */
+.hd{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-weight:900;text-decoration:none;font-size:15px;line-height:1.2}
+.logo small{display:block;font-size:11px;color:var(--red);letter-spacing:.1em}
+.hd-btn{background:var(--red);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:7px 12px;border:2px solid var(--ink);border-radius:4px}
+
+/* FV：全画面スライド（ゆっくりズーム＋クロスフェード） */
+.fv{position:relative;overflow:hidden;background:#111;color:#fff;min-height:calc(100svh - 56px);display:flex;align-items:flex-end;isolation:isolate}
+.fv-slides{position:absolute;inset:0;z-index:-2;list-style:none}
+.fv-slides li{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
+.fv-slides li.show{opacity:1}
+.fv-slides img{width:100%;height:100%;object-fit:cover;transform:scale(1)}
+.fv-slides li.show img{animation:zoom 7.5s ease-out forwards}
+@keyframes zoom{to{transform:scale(1.12)}}
+.fv::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,.35) 42%,#111 62%)}
+.fv .wrap{width:100%;padding-top:46vh;padding-bottom:32px}
+.fv-slides{bottom:38%}
+.fv-tag{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:13px;padding:4px 12px;letter-spacing:.08em}
+.fv h1{font-weight:900;font-size:clamp(36px,10vw,76px);line-height:1.22;margin:16px 0 12px;text-shadow:0 2px 16px rgba(0,0,0,.5)}
+.fv h1 em{font-style:normal;color:#fff;background:var(--red);padding:0 .12em;text-shadow:none}
+.fv-sub{font-weight:700;font-size:clamp(16px,4.2vw,21px);line-height:1.7;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.fv-cap{position:absolute;right:16px;top:16px;font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.9);writing-mode:vertical-rl;font-weight:700;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.fv-cap span{display:none}.fv-cap span.show{display:inline;animation:capin .8s .5s both}
+@keyframes capin{from{opacity:0;transform:translateY(-8px)}}
+.fv-info{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.25);margin-top:24px;border:1px solid rgba(255,255,255,.25)}
+.fv-info div{background:rgba(0,0,0,.5);backdrop-filter:blur(4px);padding:8px 12px}
+.fv-info span{display:block;font-size:11px;color:rgba(255,255,255,.7);font-weight:700}
+.fv-info strong{font-size:16px;font-weight:900;line-height:1.35}
+.fv-info .wide{grid-column:1/-1}
+.fv-info .price strong{font-size:24px}
+.fv-info .price{background:var(--red)}
+.fv-info .tbd{display:inline;font-size:11px;vertical-align:middle;color:#8a6a00}
+.fv .btn{margin:22px 0 0}
+.credit{font-size:11px;color:rgba(255,255,255,.55);margin-top:12px}
+
+.photo{position:relative;background:repeating-linear-gradient(45deg,#f1ebe6 0 12px,#f7f2ee 12px 24px);border:2px dashed #cbbfb6;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:#8d7f75;font-weight:700;font-size:14px;aspect-ratio:4/3;padding:12px}
+.photo small{display:block;font-weight:400;font-size:12px}
+
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:440px;margin:28px auto 0;
+  background:var(--red);color:#fff;font-weight:900;font-size:19px;text-decoration:none;letter-spacing:.06em;
+  padding:18px 20px;border:2px solid var(--ink);border-radius:4px;box-shadow:5px 5px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn::after{content:"→";font-weight:900}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn-note{text-align:center;font-size:13px;color:var(--gray);margin-top:14px}
+
+/* sections */
+section{padding:64px 0}
+section.alt{background:var(--bg2)}
+.sec-label{font-family:Oswald,"Noto Sans JP",sans-serif;font-size:14px;font-weight:700;color:var(--red);letter-spacing:.2em}
+h2{font-size:clamp(24px,6.4vw,36px);font-weight:900;line-height:1.4;margin:6px 0 24px}
+h2 .red{color:var(--red)}
+.lead{color:var(--gray);margin-bottom:24px}
+h3{font-size:19px;font-weight:900;line-height:1.5}
+
+/* 2 feelings */
+.feel{display:grid;gap:12px}
+.feel li{list-style:none;background:#fff;border-left:6px solid var(--red);padding:14px 16px;font-weight:700;font-size:17px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.feel-answer{margin-top:28px;font-weight:900;font-size:clamp(20px,5.4vw,26px);text-align:center;line-height:1.6}
+.feel-answer b{color:var(--red)}
+
+/* 3 changes */
+.changes{display:grid;gap:16px;counter-reset:c}
+.change{border:2px solid var(--ink);padding:22px 20px 20px;position:relative;background:#fff}
+.change::before{counter-increment:c;content:"0" counter(c);position:absolute;top:-16px;left:16px;background:var(--red);color:#fff;font-weight:900;padding:2px 12px;font-size:15px}
+.change p{color:var(--gray);margin-top:6px}
+
+/* 3 rows：写真＋ずらした色面 */
+.rows{display:grid;gap:40px}
+.row{display:grid;position:relative}
+.row-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.row-txt{position:relative;background:#fdecee;padding:22px 20px;margin:-28px 0 0 20px}
+.row-no{font-size:34px;font-weight:700;color:var(--red);line-height:1;margin-bottom:6px;font-family:Oswald,"Noto Sans JP",sans-serif}
+.row-txt p:last-child{color:var(--gray);margin-top:6px}
+
+/* 4 kempo */
+.about{background:#fff;border:1px solid var(--line);padding:20px;margin-bottom:28px}
+.menu{display:grid;gap:14px}
+.menu-item{background:#fff;border:1px solid var(--line)}
+.menu-item>div{padding:16px 18px 18px}
+.menu-img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.menu-ico{width:64px;height:64px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px}
+.menu-item p{color:var(--gray);font-size:15px}
+
+/* 5 flow */
+.flow{position:relative;margin-left:8px;border-left:3px solid var(--red);padding-left:22px}
+.flow li{list-style:none;position:relative;padding-bottom:22px}
+.flow li::before{content:"";position:absolute;left:-31px;top:6px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--red)}
+.flow time{font-weight:900;color:var(--red);font-size:15px}
+.flow p{color:var(--gray);font-size:15px}
+.note-box{background:#fff;border:2px solid var(--red);padding:16px 18px;margin-top:8px}
+.note-box h3{color:var(--red);font-size:16px;margin-bottom:4px}
+
+/* 6 teacher */
+.teacher{display:grid;gap:22px}
+.teacher .photo{aspect-ratio:1/1;max-width:280px;margin:0 auto;width:100%;border-radius:50%}
+.t-name{font-size:26px;font-weight:900}
+.t-role{color:var(--red);font-weight:700;font-size:14px}
+.t-msg{margin-top:14px;background:var(--bg2);padding:18px;position:relative}
+.t-msg p+p{margin-top:10px}
+
+/* 7 safety */
+.safety{display:grid;gap:12px}
+.safe{background:#fff;border:1px solid var(--line);padding:16px 18px}
+.safe h3{font-size:17px;display:flex;align-items:center;gap:8px}
+.safe h3::before{content:"✓";display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--red);color:#fff;font-size:14px;flex:none}
+.safe p{color:var(--gray);font-size:15px;margin-top:4px;padding-left:32px}
+
+/* 8 bunbu */
+.bunbu{background:#fff;border:2px solid var(--ink);padding:22px 20px}
+.bunbu p{margin-top:8px}
+
+/* 9 price table */
+.table{width:100%;border-collapse:collapse;background:#fff}
+.table th,.table td{border:1px solid var(--line);padding:14px 12px;text-align:left;vertical-align:top;font-size:15px}
+.table th{background:var(--bg2);width:32%;font-weight:700}
+.table .big{font-size:24px;font-weight:900;color:var(--red)}
+.map{margin-top:16px;aspect-ratio:16/9}
+
+/* 10 trial + faq */
+.trial{background:var(--red);color:#fff;padding:24px 20px;margin-bottom:36px}
+.trial h3{font-size:21px;margin-bottom:10px}
+.trial dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.trial dt{font-weight:900;white-space:nowrap}
+.trial .tbd{color:#8a6a00}
+.faq details{background:#fff;border:1px solid var(--line);margin-bottom:10px}
+.faq summary{cursor:pointer;list-style:none;padding:16px 44px 16px 16px;font-weight:700;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";color:var(--red);font-weight:900;margin-right:8px}
+.faq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--red)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 16px 16px 36px;color:var(--gray);font-size:15px}
+
+/* 11 apply */
+.apply{background:var(--ink);color:#fff;text-align:center}
+.apply h2{color:#fff}
+.tel{display:block;max-width:440px;margin:0 auto;background:#fff;color:var(--ink);text-decoration:none;padding:20px;border-radius:4px;box-shadow:6px 6px 0 var(--red)}
+.tel span{display:block;font-size:13px;font-weight:700;color:var(--red)}
+.tel strong{display:block;font-size:clamp(28px,8vw,36px);font-weight:900;letter-spacing:.03em;line-height:1.3}
+.tel small{font-size:13px;color:var(--gray)}
+.ask{max-width:520px;margin:28px auto 0;text-align:left;background:rgba(255,255,255,.08);padding:18px 20px;font-size:15px}
+.ask h3{font-size:16px;margin-bottom:8px}
+.ask ol{padding-left:1.3em}
+.ask .opt{color:#bbb;font-size:13px}
+.ask-note{margin-top:10px;color:#ddd;font-size:13px}
+.next{max-width:520px;margin:18px auto 0;text-align:left;font-size:14px;color:#ddd}
+
+footer{background:#111;color:#aaa;font-size:13px;padding:32px 0}
+footer h3{color:#fff;font-size:15px;margin-bottom:8px}
+footer dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin-bottom:18px}
+footer p{margin-top:8px}
+
+/* fixed CTA */
+.fix-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line)}
+.fix-cta a{display:block;text-align:center;background:var(--red);color:#fff;font-weight:900;text-decoration:none;padding:14px;border:2px solid var(--ink);border-radius:4px;font-size:16px;letter-spacing:.06em}
+
+/* fade-in */
+.fade{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.fade.on{opacity:1;transform:none}
+
+@media (min-width:768px){
+  body{font-size:17px}
+  .fv{padding:64px 0 72px}
+  .fv-grid{grid-template-columns:1.1fr 1fr;align-items:center}
+  .fv .btn{margin-left:0}
+  .fv .wrap{padding-top:140px;padding-bottom:56px}
+  .fv-slides{bottom:0}
+  .fv::after{background:linear-gradient(90deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.1) 75%)}
+  .fv-info{grid-template-columns:repeat(4,auto);max-width:860px}
+  .fv-info .wide{grid-column:auto}
+  .fv-cap{right:32px;top:32px;font-size:14px}
+  .rows{gap:72px}
+  .row{grid-template-columns:58% 1fr;align-items:center}
+  .row-txt{margin:0 0 0 -60px;padding:36px 32px}
+  .row.rev{grid-template-columns:1fr 58%}
+  .row.rev .row-img{order:2}
+  .row.rev .row-txt{margin:0 -60px 0 0;z-index:1}
+  .menu{grid-template-columns:1fr 1fr}
+  .teacher{grid-template-columns:280px 1fr;align-items:start}
+  .safety{grid-template-columns:1fr 1fr}
+  .fix-cta{left:auto;right:20px;bottom:20px;width:360px;border:none;background:none;padding:0}
+  .fix-cta a{box-shadow:5px 5px 0 var(--ink)}
+  body{padding-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){.fv-slides li.show img{animation:none}.fade{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body id="top">
+
+<header class="hd">
+  <div class="wrap">
+    <a class="logo" href="#top"><small>神戸市灘区・六甲道</small>みっちゃん塾 日本拳法教室</a>
+    <a class="hd-btn" href="#apply">体験を申し込む</a>
+  </div>
+</header>
+
+<!-- ① 最初の画面 -->
+<section class="fv">
+  <ul class="fv-slides" aria-hidden="true">
+    <li class="show"><img src="images/hero-mitt.webp" alt="" style="object-position:40% 30%"></li>
+    <li><img src="images/hero-gloves.webp" alt="" style="object-position:50% 15%"></li>
+    <li><img src="images/kata.webp" alt="" style="object-position:50% 40%"></li>
+  </ul>
+  <p class="fv-cap" aria-hidden="true"><span class="show">ミットに、全力で打ちこめ。</span><span>くやしさを、拳にこめろ。</span><span>型をきわめて、強くなれ。</span></p>
+  <div class="wrap">
+    <span class="fv-tag">小学2〜4年生 募集</span>
+    <h1>強くなって、<br><em>見返したく</em><br><em>ないか。</em></h1>
+    <p class="fv-sub">くやしさを、強さに変える。<br>日本拳法で、胸を張れる自分へ。</p>
+    <div class="fv-info">
+      <div><span>対象</span><strong>小学2〜4年生</strong></div>
+      <div><span>場所</span><strong>六甲道周辺<span class="tbd">仮</span></strong></div>
+      <div class="wide"><span>日時</span><strong>毎週水曜日 19:00〜20:00</strong></div>
+      <div class="wide price"><span>月謝</span><strong>5,500円<small style="font-size:13px">（税込）</small><span class="tbd">仮</span></strong></div>
+    </div>
+    <a class="btn" href="#apply">体験レッスンを申し込む</a>
+    <p class="credit">※写真はイメージです</p>
+  </div>
+</section>
+
+<!-- ② こんな気持ち -->
+<section class="alt">
+  <div class="wrap fade">
+    <p class="sec-label">FOR YOU</p>
+    <h2>こんな気持ち、<br>ないか？</h2>
+    <ul class="feel">
+      <li>強くなりたい。</li>
+      <li>ばかにされて、くやしい。</li>
+      <li>自分に、自信をつけたい。</li>
+      <li>かっこいい技を、できるようになりたい。</li>
+      <li>何か新しいことを、始めてみたい。</li>
+    </ul>
+    <p class="feel-answer">ひとつでも当てはまるなら、<br><b>その気持ちを、ここで力に変えよう。</b></p>
+  </div>
+</section>
+
+<!-- ③ 3つの変化 -->
+<section>
+  <div class="wrap fade">
+    <p class="sec-label">GOAL</p>
+    <h2>この教室で目指す<br><span class="red">3つの変化</span></h2>
+    <div class="rows">
+      <div class="row">
+        <div class="row-img"><img src="images/rei.webp" alt="道着で礼をする子ども（イメージ）" loading="lazy" style="object-position:50% 12%"></div>
+        <div class="row-txt"><p class="row-no">01</p><h3>心と体を鍛える</h3><p>礼に始まり、礼に終わる。正しい姿勢、あきらめずに続ける体力。毎週の練習で、心と体の土台をつくります。</p></div>
+      </div>
+      <div class="row rev">
+        <div class="row-img"><img src="images/kick.webp" alt="蹴りの練習をする子ども（イメージ）" loading="lazy" style="object-position:50% 25%"></div>
+        <div class="row-txt"><p class="row-no">02</p><h3>上達して、自信を育てる</h3><p>昨日できなかった技が、今日できる。小さな「できた」を積み重ねて、「自分にもできる」を実感します。</p></div>
+      </div>
+      <div class="row">
+        <div class="row-img"><img src="images/hero-gloves.webp" alt="グローブを構える子ども（イメージ）" loading="lazy" style="object-position:50% 25%"></div>
+        <div class="row-txt"><p class="row-no">03</p><h3>一歩踏み出す力を育てる</h3><p>自分を守る体の使い方を知り、胸を張って前に出られる自分へ。新しい場所へ踏み出す勇気を育てます。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ 日本拳法とは -->
+<section class="alt">
+  <div class="wrap fade">
+    <p class="sec-label">NIPPON KEMPO</p>
+    <h2>日本拳法とは？<br>ここで、何をするの？</h2>
+    <div class="about">
+      <h3>突く・蹴る・投げる。日本で生まれた総合武道。</h3>
+      <p style="margin-top:8px;color:var(--gray)">日本拳法は、昭和初期に大阪で生まれた武道です。大会では防具をつけ、突き・蹴り・投げを使って戦います。関西の大学で盛んに行われています。</p>
+    </div>
+    <h3 style="margin-bottom:14px">この教室の練習メニュー</h3>
+    <div class="menu">
+      <div class="menu-item"><img class="menu-img" src="images/kata.webp" alt="型の練習（イメージ）" loading="lazy"><div><h3>基本動作・型</h3><p>構え、突き、蹴り、足さばき。まずは正しいフォームを、一つずつ身につけます。</p></div></div>
+      <div class="menu-item"><img class="menu-img" src="images/shadow.webp" alt="突きを出す子ども（イメージ）" loading="lazy" style="object-position:50% 15%"><div><h3>シャドーボクシング</h3><p>相手をイメージして、覚えた技を連続で出す練習。動きがどんどん速く、かっこよくなります。</p></div></div>
+      <div class="menu-item"><img class="menu-img" src="images/hero-mitt.webp" alt="ミット打ち（イメージ）" loading="lazy" style="object-position:50% 35%"><div><h3>ミット打ち</h3><p>講師が持つミットに、思い切り打ち込みます。「パーン！」と鳴る音が、上達のあかしです。</p></div></div>
+      <div class="menu-item"><img class="menu-img" src="images/stretch.webp" alt="準備運動をする子ども（イメージ）" loading="lazy" style="object-position:50% 20%"><div><h3>体力づくり</h3><p>ゲーム感覚のトレーニングで、走る・跳ぶ・踏ん張る力をつけます。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ レッスンの流れ -->
+<section>
+  <div class="wrap fade">
+    <p class="sec-label">LESSON</p>
+    <h2>60分のレッスンの流れ<span class="tbd">例</span></h2>
+    <ol class="flow">
+      <li><time>19:00</time><h3>あいさつ・準備運動</h3><p>礼から始めます。体をあたため、けがを防ぎます。</p></li>
+      <li><time>19:10</time><h3>基本動作・型</h3><p>構え・突き・蹴りのフォームを、講師と一緒に確認します。</p></li>
+      <li><time>19:25</time><h3>シャドーボクシング</h3><p>覚えた技をつなげて動きます。</p></li>
+      <li><time>19:35</time><h3>水分補給・休憩</h3><p>こまめに休みをとります。</p></li>
+      <li><time>19:40</time><h3>ミット打ち</h3><p>一人ずつ、講師のミットに打ち込みます。</p></li>
+      <li><time>19:50</time><h3>体力づくり・ふりかえり</h3><p>今日できたことを確認して、礼で終わります。</p></li>
+    </ol>
+    <div class="note-box">
+      <h3>はじめてでも大丈夫</h3>
+      <p>運動が苦手な子も、学年や体力に合わせて回数・強さを調整します。無理はさせません。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ 講師紹介 -->
+<section class="alt">
+  <div class="wrap fade">
+    <p class="sec-label">TEACHER</p>
+    <h2>講師紹介</h2>
+    <div class="teacher">
+      <div class="photo">講師の顔写真<small>（掲載予定）</small></div>
+      <div>
+        <p class="t-role">神戸大学で日本拳法に取り組む大学生</p>
+        <p class="t-name">はやと 先生</p>
+        <p style="font-size:14px;color:var(--gray);margin-top:4px">経歴・競技実績：<span class="tbd">記入予定</span></p>
+        <div class="t-msg">
+          <p><strong>教室への思い</strong><span class="tbd">本人の言葉に差し替え</span></p>
+          <p>強くなりたい気持ちは、それだけで立派な才能です。日本拳法は、練習した分だけ確実に上達を実感できる武道です。</p>
+          <p>技が一つできるたびに、子どもの表情は変わります。一人ひとりのペースに合わせて、「できた！」を一緒に増やしていきます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ 安心 -->
+<section>
+  <div class="wrap fade">
+    <p class="sec-label">SAFETY</p>
+    <h2>保護者の方へ<br>安心して通っていただくために</h2>
+    <img src="images/gear.webp" alt="練習用のミットと防具（イメージ）" loading="lazy" style="width:100%;aspect-ratio:21/9;object-fit:cover;margin-bottom:20px">
+    <div class="safety">
+      <div class="safe"><h3>子ども同士で打ち合いません</h3><p>練習はミット打ち・型・シャドーボクシングが中心。打つのは講師が持つミットだけです。</p></div>
+      <div class="safe"><h3>見学できます</h3><p>保護者の方の見学については、お電話でご相談ください。<span class="tbd">条件を記入</span></p></div>
+      <div class="safe"><h3>少人数で目の届く指導</h3><p>講師1人あたりの人数：<span class="tbd">定員を記入</span></p></div>
+      <div class="safe"><h3>保険・けがへの対応</h3><p>加入する保険、けがの際の連絡方法：<span class="tbd">記入予定</span></p></div>
+      <div class="safe"><h3>悩みごとも相談できます</h3><p>学校のこと、友だちのことなど、気になることがあれば講師・教室にご相談ください。</p></div>
+      <div class="safe"><h3>事情を話す必要はありません</h3><p>「強くなりたい」だけで十分です。お申し込み時に、詳しい事情をお聞きすることはありません。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑧ 塾との連携 -->
+<section class="alt">
+  <div class="wrap fade">
+    <p class="sec-label">BUNBU RYODO</p>
+    <h2>みっちゃん塾だから、<br><span class="red">学びと武道の両立</span>を。</h2>
+    <div class="bunbu">
+      <h3>体を鍛えるだけで終わらせない。</h3>
+      <p>集中力・あいさつ・続ける力は、勉強にもそのまま生きます。学習塾が運営する教室として、文武両道を応援します。</p>
+      <p style="font-size:15px;color:var(--gray)">学習指導の内容・時間・料金：<span class="tbd">検討中・決まり次第記入</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ⑨ 料金・日時・アクセス -->
+<section id="price">
+  <div class="wrap fade">
+    <p class="sec-label">PRICE &amp; ACCESS</p>
+    <h2>料金・日時・場所</h2>
+    <table class="table">
+      <tr><th>月謝</th><td><span class="big">5,500円</span>（税込）<span class="tbd">仮</span></td></tr>
+      <tr><th>入会金</th><td><span class="tbd">未定</span></td></tr>
+      <tr><th>保険料</th><td><span class="tbd">未定</span></td></tr>
+      <tr><th>道着・防具</th><td><span class="tbd">未定</span></td></tr>
+      <tr><th>日時</th><td>毎週水曜日 19:00〜20:00（月4回前後）</td></tr>
+      <tr><th>対象</th><td>小学2〜4年生（男女）</td></tr>
+      <tr><th>場所</th><td>神戸市灘区・JR六甲道駅周辺<span class="tbd">仮</span><br><small style="color:var(--gray)">正式な会場は決まり次第お知らせします</small></td></tr>
+      <tr><th>送迎</th><td>終了が20時のため、保護者の方のお迎えをお願いしています。<span class="tbd">要確認</span></td></tr>
+    </table>
+    <div class="photo map">地図（会場決定後に掲載）</div>
+    <a class="btn" href="#apply">体験レッスンを申し込む</a>
+  </div>
+</section>
+
+<!-- ⑩ 体験・FAQ -->
+<section class="alt">
+  <div class="wrap fade">
+    <p class="sec-label">TRIAL &amp; FAQ</p>
+    <h2>体験レッスンのご案内</h2>
+    <div class="trial">
+      <h3>まずは1回、やってみよう。</h3>
+      <dl>
+        <dt>日時</dt><dd>毎週水曜日 19:00〜20:00</dd>
+        <dt>料金</dt><dd><span class="tbd">未定</span></dd>
+        <dt>持ち物</dt><dd>動きやすい服、タオル、水筒</dd>
+        <dt>申込</dt><dd>お電話で受付中</dd>
+      </dl>
+    </div>
+
+    <h3 style="margin-bottom:14px">よくある質問</h3>
+    <div class="faq">
+      <details><summary>運動が苦手でも大丈夫ですか？</summary><p>大丈夫です。基本の構えから一つずつ教えます。回数や強さは、一人ひとりに合わせて調整します。</p></details>
+      <details><summary>痛い思いやけがが心配です。</summary><p>子ども同士で打ち合う練習は行いません。打つのは講師が持つミットだけです。準備運動と休憩もしっかりとります。</p></details>
+      <details><summary>道着や防具は必要ですか？</summary><p>体験は動きやすい服装で参加できます。入会後の道着・防具については決まり次第ご案内します。</p></details>
+      <details><summary>女の子でも参加できますか？</summary><p>はい。小学2〜4年生の男女が対象です。</p></details>
+      <details><summary>見学だけでもできますか？</summary><p>お電話でご相談ください。</p></details>
+      <details><summary>みっちゃん塾に通っていなくても参加できますか？</summary><p>決まり次第掲載します。お電話でもお問い合わせいただけます。</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ⑪ 申込 -->
+<section class="apply" id="apply">
+  <div class="wrap">
+    <p class="sec-label">APPLY</p>
+    <h2>体験レッスンを<br>申し込む</h2>
+    <a class="tel" href="tel:000-0000-0000">
+      <span>お電話で受付</span>
+      <strong>000-000-0000</strong>
+      <small>受付時間：<span class="tbd">記入予定</span></small>
+    </a>
+    <div class="ask">
+      <h3>お電話では、次のことをお伝えください</h3>
+      <ol>
+        <li>保護者の方のお名前</li>
+        <li>折り返しの連絡先（電話番号）</li>
+        <li>お子さまの学年</li>
+        <li>体験を希望する日（水曜日）</li>
+        <li>質問・配慮してほしいこと <span class="opt">（任意）</span></li>
+      </ol>
+      <p class="ask-note">申し込みの理由は「強くなりたいから」で十分です。詳しい事情をお話しいただく必要はありません。</p>
+    </div>
+    <p class="next">お電話のあと、担当者から体験日の確定と当日の案内をご連絡します。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h3>運営</h3>
+    <dl>
+      <dt>教室名</dt><dd>みっちゃん塾 日本拳法教室</dd>
+      <dt>運営</dt><dd>みっちゃん塾</dd>
+      <dt>連絡先</dt><dd>000-000-0000 <span class="tbd">仮</span></dd>
+    </dl>
+    <p>欠席・振替・休講・退会・返金の扱い：<span class="tbd">記入予定</span></p>
+    <p>個人情報の取り扱い：お預かりした個人情報は、体験・入会のご案内と教室運営の連絡にのみ使用し、ご本人の同意なく第三者に提供することはありません。</p>
+    <p>写真：Unsplash（イメージ写真であり、当教室の生徒・講師ではありません）</p>
+    <p style="margin-top:16px">© みっちゃん塾 日本拳法教室</p>
+  </div>
+</footer>
+
+<div class="fix-cta"><a href="#apply">体験レッスンを申し込む</a></div>
+
+<script>
+// FVスライド：6秒ごとに切り替え（動きを減らす設定の人は1枚目で止める）
+(() => {
+  const slides = document.querySelectorAll('.fv-slides li'), caps = document.querySelectorAll('.fv-cap span');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let n = 0;
+  setInterval(() => {
+    slides[n].classList.remove('show'); caps[n].classList.remove('show');
+    n = (n + 1) % slides.length;
+    slides[n].classList.add('show'); caps[n].classList.add('show');
+  }, 6000);
+})();
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
