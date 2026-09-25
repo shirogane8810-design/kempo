@@ -57,6 +57,8 @@ a{color:inherit}
 .fv-info .wide{grid-column:1/-1}
 .fv-info .price strong{font-size:24px}
 .fv-info .price{background:var(--red)}
+.fv-free{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.fv-free span{background:#fff;color:var(--red);font-weight:900;font-size:15px;padding:4px 12px;border:2px solid var(--red)}
 .fv-info .tbd{display:inline;font-size:11px;vertical-align:middle;color:#8a6a00}
 .fv .btn{margin:22px 0 0}
 .credit{font-size:11px;color:rgba(255,255,255,.55);margin-top:12px}
@@ -126,6 +128,9 @@ h3{font-size:19px;font-weight:900;line-height:1.5}
 .t-role{color:var(--red);font-weight:700;font-size:14px}
 .t-msg{margin-top:14px;background:var(--bg2);padding:18px;position:relative}
 .t-msg p+p{margin-top:10px}
+.t-career{list-style:none;margin-top:10px;display:grid;gap:6px}
+.t-career li{font-weight:700;font-size:15px;padding-left:22px;position:relative}
+.t-career li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;background:var(--red)}
 
 /* 7 safety */
 .safety{display:grid;gap:12px}
@@ -143,7 +148,8 @@ h3{font-size:19px;font-weight:900;line-height:1.5}
 .table th,.table td{border:1px solid var(--line);padding:14px 12px;text-align:left;vertical-align:top;font-size:15px}
 .table th{background:var(--bg2);width:32%;font-weight:700}
 .table .big{font-size:24px;font-weight:900;color:var(--red)}
-.map{margin-top:16px;aspect-ratio:16/9}
+.map{margin-top:16px;width:100%;aspect-ratio:16/9;border:0;display:block}
+.badge{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:900;padding:2px 8px;margin-left:8px;vertical-align:3px}
 
 /* 10 trial + faq */
 .trial{background:var(--red);color:#fff;padding:24px 20px;margin-bottom:36px}
@@ -159,19 +165,33 @@ h3{font-size:19px;font-weight:900;line-height:1.5}
 .faq details[open] summary::after{content:"−"}
 .faq details p{padding:0 16px 16px 36px;color:var(--gray);font-size:15px}
 
-/* 11 apply */
-.apply{background:var(--ink);color:#fff;text-align:center}
+/* 11 apply：お問い合わせフォーム */
+.apply{background:var(--ink);color:#fff}
 .apply h2{color:#fff}
-.tel{display:block;max-width:440px;margin:0 auto;background:#fff;color:var(--ink);text-decoration:none;padding:20px;border-radius:4px;box-shadow:6px 6px 0 var(--red)}
-.tel span{display:block;font-size:13px;font-weight:700;color:var(--red)}
-.tel strong{display:block;font-size:clamp(28px,8vw,36px);font-weight:900;letter-spacing:.03em;line-height:1.3}
-.tel small{font-size:13px;color:var(--gray)}
-.ask{max-width:520px;margin:28px auto 0;text-align:left;background:rgba(255,255,255,.08);padding:18px 20px;font-size:15px}
-.ask h3{font-size:16px;margin-bottom:8px}
-.ask ol{padding-left:1.3em}
-.ask .opt{color:#bbb;font-size:13px}
-.ask-note{margin-top:10px;color:#ddd;font-size:13px}
-.next{max-width:520px;margin:18px auto 0;text-align:left;font-size:14px;color:#ddd}
+.apply-lead{color:#ddd;margin-bottom:24px}
+.form{background:#fff;color:var(--ink);padding:24px 20px;border-radius:4px;box-shadow:6px 6px 0 var(--red);max-width:640px}
+.field{margin-bottom:20px;border:none}
+.field>label,.field legend{display:block;font-weight:700;margin-bottom:6px;font-size:15px}
+.req,.opt{display:inline-block;font-size:11px;font-weight:700;padding:1px 6px;margin-left:6px;vertical-align:2px}
+.req{background:var(--red);color:#fff}
+.opt{background:#e8e3df;color:var(--gray)}
+.form input[type=text],.form input[type=email],.form input[type=tel],.form select,.form textarea{
+  width:100%;font:inherit;font-size:16px;padding:12px;border:2px solid #cfc7c1;border-radius:4px;background:#fff;color:var(--ink)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--red)}
+.form textarea{min-height:110px;resize:vertical}
+.choices{display:grid;gap:8px}
+.choices label{display:flex;align-items:center;gap:10px;border:2px solid #cfc7c1;border-radius:4px;padding:10px 12px;font-weight:700;cursor:pointer}
+.choices input{width:18px;height:18px;accent-color:var(--red)}
+.choices label:has(input:checked){border-color:var(--red);background:#fdecee}
+.hint{font-size:13px;color:var(--gray);margin-top:6px}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:4px 0 8px}
+.agree input{width:18px;height:18px;margin-top:3px;accent-color:var(--red);flex:none}
+.form .btn{margin:16px 0 0;max-width:none;cursor:pointer;font-family:inherit}
+.form-msg{margin-top:16px;padding:14px 16px;font-weight:700;display:none}
+.form-msg.show{display:block}
+.form-msg.ok{background:#fdecee;border-left:6px solid var(--red)}
+.form-msg.wait{background:var(--tbd);border-left:6px solid #d9b100}
+.next{margin-top:18px;font-size:14px;color:#ddd}
 
 footer{background:#111;color:#aaa;font-size:13px;padding:32px 0}
 footer h3{color:#fff;font-size:15px;margin-bottom:8px}
@@ -218,7 +238,7 @@ footer p{margin-top:8px}
 <header class="hd">
   <div class="wrap">
     <a class="logo" href="#top"><small>神戸市灘区・六甲道</small>みっちゃん塾 日本拳法教室</a>
-    <a class="hd-btn" href="#apply">体験を申し込む</a>
+    <a class="hd-btn" href="#apply">無料体験</a>
   </div>
 </header>
 
@@ -236,11 +256,12 @@ footer p{margin-top:8px}
     <p class="fv-sub">くやしさを、強さに変える。<br>日本拳法で、胸を張れる自分へ。</p>
     <div class="fv-info">
       <div><span>対象</span><strong>小学2〜4年生</strong></div>
-      <div><span>場所</span><strong>六甲道周辺<span class="tbd">仮</span></strong></div>
+      <div><span>場所</span><strong>JR六甲道駅 徒歩2分</strong></div>
       <div class="wide"><span>日時</span><strong>毎週水曜日 19:00〜20:00</strong></div>
-      <div class="wide price"><span>月謝</span><strong>5,500円<small style="font-size:13px">（税込）</small><span class="tbd">仮</span></strong></div>
+      <div class="wide price"><span>月謝</span><strong>5,500円<small style="font-size:13px">（税込）</small></strong></div>
     </div>
-    <a class="btn" href="#apply">体験レッスンを申し込む</a>
+    <p class="fv-free"><span>体験無料</span><span>今なら入会金無料</span></p>
+    <a class="btn" href="#apply">無料体験を申し込む</a>
     <p class="credit">※写真はイメージです</p>
   </div>
 </section>
@@ -332,11 +353,16 @@ footer p{margin-top:8px}
       <div>
         <p class="t-role">神戸大学で日本拳法に取り組む大学生</p>
         <p class="t-name">はやと 先生</p>
-        <p style="font-size:14px;color:var(--gray);margin-top:4px">経歴・競技実績：<span class="tbd">記入予定</span></p>
+        <ul class="t-career">
+          <li>神戸大学 日本拳法部</li>
+          <li>全国国公立大会 優勝</li>
+          <li>全国新人戦大会 優勝</li>
+        </ul>
         <div class="t-msg">
-          <p><strong>教室への思い</strong><span class="tbd">本人の言葉に差し替え</span></p>
-          <p>強くなりたい気持ちは、それだけで立派な才能です。日本拳法は、練習した分だけ確実に上達を実感できる武道です。</p>
-          <p>技が一つできるたびに、子どもの表情は変わります。一人ひとりのペースに合わせて、「できた！」を一緒に増やしていきます。</p>
+          <p><strong>教室への思い</strong></p>
+          <p>ふだんは、みっちゃん塾の講師として勉強を教えています。子どもたちと向き合う中で感じるのは、本当の強さは、テストの点数や腕っぷしだけでは決まらないということです。</p>
+          <p>くやしい思いをしても、もう一度立ち向かえること。人の痛みがわかること。日本拳法は、そんな「人としての強さ」を、体を通して僕に教えてくれました。</p>
+          <p>勉強からも、自分からも逃げない子に。文武両道を目指す子どもたちの背中を、全力で押します。</p>
         </div>
       </div>
     </div>
@@ -351,9 +377,9 @@ footer p{margin-top:8px}
     <img src="images/gear.webp" alt="練習用のミットと防具（イメージ）" loading="lazy" style="width:100%;aspect-ratio:21/9;object-fit:cover;margin-bottom:20px">
     <div class="safety">
       <div class="safe"><h3>子ども同士で打ち合いません</h3><p>練習はミット打ち・型・シャドーボクシングが中心。打つのは講師が持つミットだけです。</p></div>
-      <div class="safe"><h3>見学できます</h3><p>保護者の方の見学については、お電話でご相談ください。<span class="tbd">条件を記入</span></p></div>
-      <div class="safe"><h3>少人数で目の届く指導</h3><p>講師1人あたりの人数：<span class="tbd">定員を記入</span></p></div>
-      <div class="safe"><h3>保険・けがへの対応</h3><p>加入する保険、けがの際の連絡方法：<span class="tbd">記入予定</span></p></div>
+      <div class="safe"><h3>見学できます</h3><p>保護者の方の見学については、お問い合わせフォームからご相談ください。<span class="tbd">条件を記入</span></p></div>
+      <div class="safe"><h3>講師1人につき、5人まで</h3><p>一人ひとりの動きに目が届く少人数制です。フォームのくせも、その場で直します。</p></div>
+      <div class="safe"><h3>スポーツ安全保険に加入</h3><p>全員が「スポーツ安全保険」（公益財団法人スポーツ安全協会）に加入します。万一けがをした場合は、すぐに保護者の方へ連絡し、必要に応じて医療機関へお連れします。</p></div>
       <div class="safe"><h3>悩みごとも相談できます</h3><p>学校のこと、友だちのことなど、気になることがあれば講師・教室にご相談ください。</p></div>
       <div class="safe"><h3>事情を話す必要はありません</h3><p>「強くなりたい」だけで十分です。お申し込み時に、詳しい事情をお聞きすることはありません。</p></div>
     </div>
@@ -368,7 +394,7 @@ footer p{margin-top:8px}
     <div class="bunbu">
       <h3>体を鍛えるだけで終わらせない。</h3>
       <p>集中力・あいさつ・続ける力は、勉強にもそのまま生きます。学習塾が運営する教室として、文武両道を応援します。</p>
-      <p style="font-size:15px;color:var(--gray)">学習指導の内容・時間・料金：<span class="tbd">検討中・決まり次第記入</span></p>
+      <p><strong>みっちゃん塾に通っていなくても参加できます。</strong>塾生の方には割引があります。くわしくはお問い合わせください。</p>
     </div>
   </div>
 </section>
@@ -379,17 +405,17 @@ footer p{margin-top:8px}
     <p class="sec-label">PRICE &amp; ACCESS</p>
     <h2>料金・日時・場所</h2>
     <table class="table">
-      <tr><th>月謝</th><td><span class="big">5,500円</span>（税込）<span class="tbd">仮</span></td></tr>
-      <tr><th>入会金</th><td><span class="tbd">未定</span></td></tr>
-      <tr><th>保険料</th><td><span class="tbd">未定</span></td></tr>
-      <tr><th>道着・防具</th><td><span class="tbd">未定</span></td></tr>
+      <tr><th>月謝</th><td><span class="big">5,500円</span>（税込）<br><small style="color:var(--gray)">保険料（年800円）のほかに追加費用はありません。塾生割引あり</small></td></tr>
+      <tr><th>入会金</th><td><strong>今なら無料</strong></td></tr>
+      <tr><th>保険料</th><td>スポーツ安全保険 年額800円<br><small style="color:var(--gray)">入会時にお預かりします（毎年4月更新）。練習中のけがに備える保険です</small></td></tr>
+      <tr><th>服装</th><td>体操服でOK（道着は任意）<br>防具は使わないため不要です</td></tr>
       <tr><th>日時</th><td>毎週水曜日 19:00〜20:00（月4回前後）</td></tr>
       <tr><th>対象</th><td>小学2〜4年生（男女）</td></tr>
-      <tr><th>場所</th><td>神戸市灘区・JR六甲道駅周辺<span class="tbd">仮</span><br><small style="color:var(--gray)">正式な会場は決まり次第お知らせします</small></td></tr>
+      <tr><th>場所</th><td>みっちゃん塾 本教室<br>〒657-0027 神戸市灘区永手町3-2-30 永手コスモハイツ101<br><small style="color:var(--gray)">JR六甲道駅 北側 徒歩2分</small></td></tr>
       <tr><th>送迎</th><td>終了が20時のため、保護者の方のお迎えをお願いしています。<span class="tbd">要確認</span></td></tr>
     </table>
-    <div class="photo map">地図（会場決定後に掲載）</div>
-    <a class="btn" href="#apply">体験レッスンを申し込む</a>
+    <iframe class="map" src="https://maps.google.com/maps?q=%E7%A5%9E%E6%88%B8%E5%B8%82%E7%81%98%E5%8C%BA%E6%B0%B8%E6%89%8B%E7%94%BA3-2-30&z=16&output=embed" title="みっちゃん塾 本教室の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <a class="btn" href="#apply">無料体験を申し込む</a>
   </div>
 </section>
 
@@ -397,14 +423,15 @@ footer p{margin-top:8px}
 <section class="alt">
   <div class="wrap fade">
     <p class="sec-label">TRIAL &amp; FAQ</p>
-    <h2>体験レッスンのご案内</h2>
+    <h2>無料体験レッスンのご案内</h2>
     <div class="trial">
       <h3>まずは1回、やってみよう。</h3>
       <dl>
         <dt>日時</dt><dd>毎週水曜日 19:00〜20:00</dd>
-        <dt>料金</dt><dd><span class="tbd">未定</span></dd>
-        <dt>持ち物</dt><dd>動きやすい服、タオル、水筒</dd>
-        <dt>申込</dt><dd>お電話で受付中</dd>
+        <dt>料金</dt><dd><strong>無料</strong></dd>
+        <dt>服装</dt><dd>体操服など動きやすい服</dd>
+        <dt>持ち物</dt><dd>タオル、水筒</dd>
+        <dt>申込</dt><dd>ページ下のフォームから</dd>
       </dl>
     </div>
 
@@ -412,36 +439,64 @@ footer p{margin-top:8px}
     <div class="faq">
       <details><summary>運動が苦手でも大丈夫ですか？</summary><p>大丈夫です。基本の構えから一つずつ教えます。回数や強さは、一人ひとりに合わせて調整します。</p></details>
       <details><summary>痛い思いやけがが心配です。</summary><p>子ども同士で打ち合う練習は行いません。打つのは講師が持つミットだけです。準備運動と休憩もしっかりとります。</p></details>
-      <details><summary>道着や防具は必要ですか？</summary><p>体験は動きやすい服装で参加できます。入会後の道着・防具については決まり次第ご案内します。</p></details>
+      <details><summary>道着や防具は必要ですか？</summary><p>体操服で大丈夫です。道着は任意で、ほしい方にはご案内します。防具を使う練習はしないため、防具は必要ありません。</p></details>
+      <details><summary>月謝のほかに費用はかかりますか？</summary><p>月謝5,500円（税込）のほかは、入会時のスポーツ安全保険料（年額800円）のみです。入会金は今なら無料です。</p></details>
       <details><summary>女の子でも参加できますか？</summary><p>はい。小学2〜4年生の男女が対象です。</p></details>
-      <details><summary>見学だけでもできますか？</summary><p>お電話でご相談ください。</p></details>
-      <details><summary>みっちゃん塾に通っていなくても参加できますか？</summary><p>決まり次第掲載します。お電話でもお問い合わせいただけます。</p></details>
+      <details><summary>見学だけでもできますか？</summary><p>お問い合わせフォームの「質問・相談」からご連絡ください。</p></details>
+      <details><summary>みっちゃん塾に通っていなくても参加できますか？</summary><p>はい、どなたでも参加できます。みっちゃん塾の塾生には割引があります。</p></details>
     </div>
   </div>
 </section>
 
-<!-- ⑪ 申込 -->
+<!-- ⑪ 申込：お問い合わせフォーム（Googleフォーム接続は FORM_ACTION と ENTRY を設定） -->
 <section class="apply" id="apply">
   <div class="wrap">
-    <p class="sec-label">APPLY</p>
-    <h2>体験レッスンを<br>申し込む</h2>
-    <a class="tel" href="tel:000-0000-0000">
-      <span>お電話で受付</span>
-      <strong>000-000-0000</strong>
-      <small>受付時間：<span class="tbd">記入予定</span></small>
-    </a>
-    <div class="ask">
-      <h3>お電話では、次のことをお伝えください</h3>
-      <ol>
-        <li>保護者の方のお名前</li>
-        <li>折り返しの連絡先（電話番号）</li>
-        <li>お子さまの学年</li>
-        <li>体験を希望する日（水曜日）</li>
-        <li>質問・配慮してほしいこと <span class="opt">（任意）</span></li>
-      </ol>
-      <p class="ask-note">申し込みの理由は「強くなりたいから」で十分です。詳しい事情をお話しいただく必要はありません。</p>
-    </div>
-    <p class="next">お電話のあと、担当者から体験日の確定と当日の案内をご連絡します。</p>
+    <p class="sec-label">CONTACT</p>
+    <h2>無料体験の申込・<br>お問い合わせ</h2>
+    <p class="apply-lead">1分で入力できます。申し込みの理由は「強くなりたいから」で十分です。</p>
+    <form class="form" id="contact" novalidate>
+      <fieldset class="field">
+        <legend>ご用件<span class="req">必須</span></legend>
+        <div class="choices">
+          <label><input type="radio" name="kind" value="無料体験の申込" checked> 無料体験を申し込む</label>
+          <label><input type="radio" name="kind" value="質問・相談"> 質問・相談だけしたい</label>
+        </div>
+      </fieldset>
+      <div class="field">
+        <label for="f-name">保護者のお名前<span class="req">必須</span></label>
+        <input type="text" id="f-name" name="name" autocomplete="name" placeholder="例：六甲 太郎" required>
+      </div>
+      <div class="field">
+        <label for="f-mail">メールアドレス<span class="req">必須</span></label>
+        <input type="email" id="f-mail" name="email" autocomplete="email" inputmode="email" placeholder="例：example@mail.com" required>
+      </div>
+      <div class="field">
+        <label for="f-tel">電話番号<span class="opt">任意</span></label>
+        <input type="tel" id="f-tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="例：090-1234-5678">
+      </div>
+      <div class="field">
+        <label for="f-grade">お子さまの学年<span class="req">必須</span></label>
+        <select id="f-grade" name="grade" required>
+          <option value="">選んでください</option>
+          <option>小学2年生</option><option>小学3年生</option><option>小学4年生</option><option>その他</option>
+        </select>
+      </div>
+      <div class="field" id="date-field">
+        <label for="f-date">体験の希望日（水曜 19:00〜20:00）<span class="req">必須</span></label>
+        <select id="f-date" name="date" required>
+          <option value="">選んでください</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-msg">質問・配慮してほしいこと<span class="opt">任意</span></label>
+        <textarea id="f-msg" name="message" placeholder="例：運動が苦手ですが大丈夫ですか？／見学はできますか？"></textarea>
+        <p class="hint">くわしい事情を書いていただく必要はありません。</p>
+      </div>
+      <label class="agree"><input type="checkbox" name="agree" required> 個人情報の取り扱い（ページ下部）に同意します</label>
+      <button class="btn" type="submit">この内容で送信する</button>
+      <p class="form-msg" id="form-msg" role="status"></p>
+    </form>
+    <p class="next">送信後、担当者から2日以内にメールでご連絡し、体験日を確定します。</p>
   </div>
 </section>
 
@@ -451,7 +506,8 @@ footer p{margin-top:8px}
     <dl>
       <dt>教室名</dt><dd>みっちゃん塾 日本拳法教室</dd>
       <dt>運営</dt><dd>みっちゃん塾</dd>
-      <dt>連絡先</dt><dd>000-000-0000 <span class="tbd">仮</span></dd>
+      <dt>所在地</dt><dd>〒657-0027 神戸市灘区永手町3-2-30 永手コスモハイツ101</dd>
+      <dt>連絡先</dt><dd><a href="#apply">お問い合わせフォーム</a></dd>
     </dl>
     <p>欠席・振替・休講・退会・返金の扱い：<span class="tbd">記入予定</span></p>
     <p>個人情報の取り扱い：お預かりした個人情報は、体験・入会のご案内と教室運営の連絡にのみ使用し、ご本人の同意なく第三者に提供することはありません。</p>
@@ -460,7 +516,7 @@ footer p{margin-top:8px}
   </div>
 </footer>
 
-<div class="fix-cta"><a href="#apply">体験レッスンを申し込む</a></div>
+<div class="fix-cta"><a href="#apply">無料体験を申し込む</a></div>
 
 <script>
 // FVスライド：6秒ごとに切り替え（動きを減らす設定の人は1枚目で止める）
@@ -473,6 +529,42 @@ footer p{margin-top:8px}
     n = (n + 1) % slides.length;
     slides[n].classList.add('show'); caps[n].classList.add('show');
   }, 6000);
+})();
+// お問い合わせフォーム
+// Googleフォームにつなぐときは、FORM_ACTION に「…/formResponse」のURL、ENTRY に各項目の entry.番号 を入れる
+const FORM_ACTION = '';
+const ENTRY = { kind: '', name: '', email: '', tel: '', grade: '', date: '', message: '' };
+(() => {
+  const form = document.getElementById('contact'), msg = document.getElementById('form-msg');
+  const date = document.getElementById('f-date'), dateField = document.getElementById('date-field');
+  // 直近6回の水曜日を選択肢にする
+  const d = new Date(); d.setHours(0, 0, 0, 0);
+  d.setDate(d.getDate() + ((3 - d.getDay() + 7) % 7 || 7));
+  for (let i = 0; i < 6; i++, d.setDate(d.getDate() + 7)) {
+    const t = `${d.getMonth() + 1}月${d.getDate()}日（水）`;
+    date.add(new Option(t, t));
+  }
+  date.add(new Option('日程を相談したい', '日程を相談したい'));
+  // 質問だけのときは希望日を隠す
+  const syncKind = () => {
+    const trial = form.elements.kind.value === '無料体験の申込';
+    dateField.hidden = !trial; date.required = trial;
+  };
+  form.querySelectorAll('[name=kind]').forEach(r => r.addEventListener('change', syncKind));
+  const show = (cls, text) => { msg.className = 'form-msg show ' + cls; msg.textContent = text; };
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const bad = [...form.elements].find(el => el.required && !el.closest('[hidden]') && !el.checkValidity());
+    if (bad) { bad.focus(); show('wait', '未入力の必須項目があります。'); return; }
+    if (!FORM_ACTION) { show('wait', 'ただいまフォームの準備中です。公開までもうしばらくお待ちください。'); return; }
+    const body = new FormData();
+    for (const [k, id] of Object.entries(ENTRY)) if (id && form.elements[k]) body.append(id, form.elements[k].value);
+    try {
+      await fetch(FORM_ACTION, { method: 'POST', mode: 'no-cors', body });
+      form.querySelector('button').disabled = true;
+      show('ok', '送信しました。2日以内に、担当者からメールでご連絡します。');
+    } catch { show('wait', '送信できませんでした。時間をおいてもう一度お試しください。'); }
+  });
 })();
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
 document.querySelectorAll('.fade').forEach(el => io.observe(el));
