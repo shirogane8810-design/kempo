@@ -123,7 +123,10 @@ h3{font-size:19px;font-weight:900;line-height:1.5}
 
 /* 6 teacher */
 .teacher{display:grid;gap:22px}
-.teacher .photo{aspect-ratio:1/1;max-width:280px;margin:0 auto;width:100%;border-radius:50%}
+.t-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end}
+.t-face{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;border:4px solid #fff;box-shadow:0 0 0 2px var(--red)}
+.t-match img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%}
+.t-match figcaption{font-size:12px;color:var(--gray);margin-top:4px;text-align:center}
 .t-name{font-size:26px;font-weight:900}
 .t-role{color:var(--red);font-weight:700;font-size:14px}
 .t-msg{margin-top:14px;background:var(--bg2);padding:18px;position:relative}
@@ -224,7 +227,10 @@ footer p{margin-top:8px}
   .row.rev .row-img{order:2}
   .row.rev .row-txt{margin:0 -60px 0 0;z-index:1}
   .menu{grid-template-columns:1fr 1fr}
-  .teacher{grid-template-columns:280px 1fr;align-items:start}
+  .teacher{grid-template-columns:320px 1fr;align-items:start}
+  .t-photos{grid-template-columns:1fr}
+  .t-face{max-width:240px;margin:0 auto}
+  .t-match img{aspect-ratio:4/5}
   .safety{grid-template-columns:1fr 1fr}
   .fix-cta{left:auto;right:20px;bottom:20px;width:360px;border:none;background:none;padding:0}
   .fix-cta a{box-shadow:5px 5px 0 var(--ink)}
@@ -327,7 +333,7 @@ footer p{margin-top:8px}
 <section>
   <div class="wrap fade">
     <p class="sec-label">LESSON</p>
-    <h2>60分のレッスンの流れ<span class="tbd">例</span></h2>
+    <h2>60分のレッスンの流れ</h2>
     <ol class="flow">
       <li><time>19:00</time><h3>あいさつ・準備運動</h3><p>礼から始めます。体をあたため、けがを防ぎます。</p></li>
       <li><time>19:10</time><h3>基本動作・型</h3><p>構え・突き・蹴りのフォームを、講師と一緒に確認します。</p></li>
@@ -349,7 +355,10 @@ footer p{margin-top:8px}
     <p class="sec-label">TEACHER</p>
     <h2>講師紹介</h2>
     <div class="teacher">
-      <div class="photo">講師の顔写真<small>（掲載予定）</small></div>
+      <div class="t-photos">
+        <img class="t-face" src="images/teacher.webp" alt="講師のはやと先生">
+        <figure class="t-match"><img src="images/teacher-match.webp" alt="試合中のはやと先生" loading="lazy"><figcaption>試合中のはやと先生</figcaption></figure>
+      </div>
       <div>
         <p class="t-role">神戸大学で日本拳法に取り組む大学生</p>
         <p class="t-name">はやと 先生</p>
@@ -377,7 +386,7 @@ footer p{margin-top:8px}
     <img src="images/gear.webp" alt="練習用のミットと防具（イメージ）" loading="lazy" style="width:100%;aspect-ratio:21/9;object-fit:cover;margin-bottom:20px">
     <div class="safety">
       <div class="safe"><h3>子ども同士で打ち合いません</h3><p>練習はミット打ち・型・シャドーボクシングが中心。打つのは講師が持つミットだけです。</p></div>
-      <div class="safe"><h3>見学できます</h3><p>保護者の方の見学については、お問い合わせフォームからご相談ください。<span class="tbd">条件を記入</span></p></div>
+      <div class="safe"><h3>見学・送迎もご相談ください</h3><p>見学や送迎など、気になることはお問い合わせのときにくわしくご案内します。</p></div>
       <div class="safe"><h3>講師1人につき、5人まで</h3><p>一人ひとりの動きに目が届く少人数制です。フォームのくせも、その場で直します。</p></div>
       <div class="safe"><h3>スポーツ安全保険に加入</h3><p>全員が「スポーツ安全保険」（公益財団法人スポーツ安全協会）に加入します。万一けがをした場合は、すぐに保護者の方へ連絡し、必要に応じて医療機関へお連れします。</p></div>
       <div class="safe"><h3>悩みごとも相談できます</h3><p>学校のこと、友だちのことなど、気になることがあれば講師・教室にご相談ください。</p></div>
@@ -412,7 +421,6 @@ footer p{margin-top:8px}
       <tr><th>日時</th><td>毎週水曜日 19:00〜20:00（月4回前後）</td></tr>
       <tr><th>対象</th><td>小学2〜4年生（男女）</td></tr>
       <tr><th>場所</th><td>みっちゃん塾 本教室<br>〒657-0027 神戸市灘区永手町3-2-30 永手コスモハイツ101<br><small style="color:var(--gray)">JR六甲道駅 北側 徒歩2分</small></td></tr>
-      <tr><th>送迎</th><td>終了が20時のため、保護者の方のお迎えをお願いしています。<span class="tbd">要確認</span></td></tr>
     </table>
     <iframe class="map" src="https://maps.google.com/maps?q=%E7%A5%9E%E6%88%B8%E5%B8%82%E7%81%98%E5%8C%BA%E6%B0%B8%E6%89%8B%E7%94%BA3-2-30&z=16&output=embed" title="みっちゃん塾 本教室の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <a class="btn" href="#apply">無料体験を申し込む</a>
@@ -509,9 +517,8 @@ footer p{margin-top:8px}
       <dt>所在地</dt><dd>〒657-0027 神戸市灘区永手町3-2-30 永手コスモハイツ101</dd>
       <dt>連絡先</dt><dd><a href="#apply">お問い合わせフォーム</a></dd>
     </dl>
-    <p>欠席・振替・休講・退会・返金の扱い：<span class="tbd">記入予定</span></p>
     <p>個人情報の取り扱い：お預かりした個人情報は、体験・入会のご案内と教室運営の連絡にのみ使用し、ご本人の同意なく第三者に提供することはありません。</p>
-    <p>写真：Unsplash（イメージ写真であり、当教室の生徒・講師ではありません）</p>
+    <p>写真：講師紹介以外はUnsplashのイメージ写真です（当教室の生徒ではありません）。</p>
     <p style="margin-top:16px">© みっちゃん塾 日本拳法教室</p>
   </div>
 </footer>
